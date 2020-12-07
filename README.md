@@ -45,7 +45,7 @@ Después de esto, con la tablet, el usuario podrá escanear el código de barras
 
 <h5> Paso 4:</h5>Luego instale un emulador para que pueda visualizar el proyecto una vez lo ejecute desde el android studio.
 
-    Debera contar con espacio de almacenamiento para instalar el emulador escogido.
+    Deberá contar con espacio de almacenamiento para instalar el emulador escogido.
     
  <h5> Paso 5:</h5>Ejecute el proyecto.
     
