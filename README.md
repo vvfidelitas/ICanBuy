@@ -11,7 +11,7 @@
    
 Proyecto de Análisis y Modelado de Requerimientos, de la aplicación I Can Buy
 
-<h4>Descripción del Proyecto:
+<h4>Descripción del Proyecto:</h4>
 
 El sistema contiene dos módulos: uno es una app en una tablet, y el otro es una aplicación móvil que el usuario debe descargar. Ambas son para dispositivos Android.
 
@@ -21,13 +21,13 @@ Después de esto, con la tablet, el usuario podrá escanear el código de barras
 
 
 
-<h4>Requerimientos mínimos:
+<h4>Requerimientos mínimos:</h4>
 
     Android Studio, versión 4.1.1
     Emulador o Dispositivo con un Sistema Operativo mínimo de 6.0
     
 
-<h4>Ejecutar la aplicación desde un dispositivo fisico
+<h4>Ejecutar la aplicación desde un dispositivo fisico</h4>
 <h5> Paso 1:</h5>Ingrese a la Play Store.
 <h5> Paso 2:</h5>Descargue la aplicación de I Can Buy.
     
