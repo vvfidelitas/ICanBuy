@@ -21,8 +21,9 @@ Después de esto, con la tablet, el usuario podrá escanear el código de barras
 
 
 
-Requerimientos minimos
-Android Studio, versión 4.1.1
-Emulador o Dispositivo con un Sistema Operativo mínimo de 6.0
+Requerimientos mínimos:
+
+    Android Studio, versión 4.1.1
+    Emulador o Dispositivo con un Sistema Operativo mínimo de 6.0
 
 
