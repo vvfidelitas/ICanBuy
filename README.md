@@ -1,6 +1,6 @@
 # ICanBuy
 
-
+<img src="logo.png" width="350" alt="accessibility text">
 
 Integrantes: 
     
