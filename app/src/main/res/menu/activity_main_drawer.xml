@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_favoritos"
+            android:icon="@drawable/favoritos"
+            android:title="@string/menu_favoritos" />
+        <item
+            android:id="@+id/nav_cupones"
+            android:icon="@drawable/cupones"
+            android:title="@string/menu_cupones" />
+        <item
+            android:id="@+id/nav_pago"
+            android:icon="@drawable/pago"
+            android:title="@string/menu_pago" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/perfil"
+            android:title="@string/menu_perfil" />
+        <item
+            android:id="@+id/nav_sesion"
+            android:title="@string/menu_sesion" />
+    </group>
+</menu>
