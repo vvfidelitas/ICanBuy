@@ -1,5 +1,6 @@
 package com.icb.icanbuy;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,10 +30,22 @@ public class MainActivity extends AppCompatActivity {
     EditText edt_Correo = findViewById(R.id.edt_Correo);
     EditText edt_Pass = findViewById(R.id.edt_Pass);
 
+=======
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         signin = findViewById(R.id.sign_in_button);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
 
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
         Button btn = (Button) findViewById(R.id.buttonRegistro);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+<<<<<<< HEAD
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -125,4 +141,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 }

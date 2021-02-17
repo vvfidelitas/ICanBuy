@@ -21,9 +21,15 @@
     <color name="icb_neon_green">#61ed5a</color>
     <color name="icb_yellow">#d4db4f</color>
     <color name="colorAccent">#22499c</color>
+<<<<<<< HEAD
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
 
+=======
+    <color name="address">#2F7092</color>
+    <color name="followers">#0D5D98</color>
+    <color name="headings">#3797CF</color>
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     <color name="solidCircle">#AAFFFFFF</color>
     <color name="circleBorder">#50FFFFFF</color>
     <color name="gradEnd">#67EFC8</color>
@@ -31,7 +37,10 @@
     <color name="followersBg">#65DCE5</color>
     <color name="followingBg">#49BEFF</color>
     <color name="grey">#E5E5E5</color>
+<<<<<<< HEAD
     <color name="address">#2F7092</color>
     <color name="followers">#0D5D98</color>
     <color name="headings">#3797CF</color>
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 </resources>

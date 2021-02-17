@@ -1,12 +1,18 @@
 package com.icb.icanbuy;
 
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+<<<<<<< HEAD
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -49,6 +55,7 @@ public class MenuActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+<<<<<<< HEAD
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
@@ -57,6 +64,8 @@ public class MenuActivity extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
         }
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     }
 
     @Override

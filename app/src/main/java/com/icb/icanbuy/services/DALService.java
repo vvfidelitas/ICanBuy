@@ -8,8 +8,13 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icb.icanbuy.models.Usuario.Usuario;
 import com.icb.icanbuy.models.Usuario.UsuarioList;
+<<<<<<< HEAD
 import com.icb.icanbuy.models.Usuario.UsuarioRecords;
 import com.icb.icanbuy.models.Usuario.UsuarioRecord;
+=======
+import com.icb.icanbuy.models.Usuario.UsuarioRecord;
+import com.icb.icanbuy.models.Usuario.UsuarioRecords;
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 import com.icb.icanbuy.utils.PropertiesConfig;
 
 import org.springframework.http.HttpEntity;
@@ -27,6 +32,7 @@ import java.util.List;
 public class DALService {
     private PropertiesConfig propertiesConfig;
     private Context context;
+<<<<<<< HEAD
     private final static String PRODUCT_ERROR_MESSAGE= "No se pudieron cargar los productos";
 
     public DALService(Context context) {
@@ -38,6 +44,14 @@ public class DALService {
     }
 
 
+=======
+    public DALService(Context context) {
+        this.context= context;
+        propertiesConfig = new PropertiesConfig(context);
+        usuarioList= new UsuarioList();
+        new HttpLoadUsuarios().execute();
+    }
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     private UsuarioList usuarioList;
     private final static String USUARIO_ERROR_MESSAGE= "No se pudieron cargar los usuarios";
 
@@ -47,7 +61,11 @@ public class DALService {
         return usuarioList.getUsuario(code);
     }
 
+<<<<<<< HEAD
     private class HttpLoadUsuarios extends AsyncTask<Void, Void, Integer>{
+=======
+    private class HttpLoadUsuarios extends AsyncTask<Void, Void, Integer> {
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         @Override
         protected Integer doInBackground(Void... params) {
             ObjectMapper mapper = new ObjectMapper();

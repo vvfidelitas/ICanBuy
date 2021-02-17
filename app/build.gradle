@@ -1,5 +1,9 @@
 plugins {
     id 'com.android.application'
+<<<<<<< HEAD
+=======
+    id 'com.google.gms.google-services'
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 }
 
 android {
@@ -53,16 +57,22 @@ dependencies {
     implementation files('libs/mail.jar')
     implementation files('libs/additionnal.jar')
     implementation files('libs/activation.jar')
+<<<<<<< HEAD
     implementation files('libs/activation.jar')
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     def camerax_version = "1.0.0-beta07"
     implementation "androidx.camera:camera-camera2:$camerax_version"
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
     implementation "androidx.camera:camera-view:1.0.0-alpha14"
     implementation 'androidx.camera:camera-camera2:1.0.0-beta12'
     implementation 'com.google.zxing:core:3.3.0'
+<<<<<<< HEAD
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -75,4 +85,8 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
 
     compile 'com.squareup.okhttp:okhttp:2.5.0'
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 }

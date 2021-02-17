@@ -22,6 +22,7 @@
         />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/edt_Correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,12 +34,29 @@
         android:hint="Correo"
         android:inputType="textPersonName"
         android:textColorHint="@color/white"
+=======
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Correo"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/verdeclaro"
+        android:inputType="textPersonName"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/edt_Pass"
+=======
+        android:id="@+id/editTextTextPassword"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -50,15 +68,26 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/edt_Correo"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         android:backgroundTint="@color/verdeclaro"/>
 
     <ImageView
         android:id="@+id/imageView"
+<<<<<<< HEAD
         android:layout_width="406dp"
         android:layout_height="191dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+=======
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +104,11 @@
         android:text="Ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/edt_Pass"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         android:background="@drawable/button_rounded"/>
 
     <Button
@@ -94,22 +127,35 @@
         />
 
     <ImageButton
+<<<<<<< HEAD
         android:id="@+id/sign_in_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_social"
+=======
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
+<<<<<<< HEAD
         app:srcCompat="@drawable/google" />
+=======
+        app:srcCompat="@drawable/google"
+        android:background="@drawable/button_social"/>
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="50dp"
         android:layout_height="50dp"
+<<<<<<< HEAD
         android:layout_marginTop="16dp"
         android:layout_marginEnd="128dp"
         android:background="@drawable/button_social"
@@ -117,5 +163,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
         app:srcCompat="@drawable/facebook" />
+=======
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="128dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
+        app:srcCompat="@drawable/facebook"
+        android:background="@drawable/button_social"/>
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
 </androidx.constraintlayout.widget.ConstraintLayout>

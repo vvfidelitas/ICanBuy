@@ -23,11 +23,18 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
+<<<<<<< HEAD
 import com.icb.icanbuy.MainActivity;
 import com.icb.icanbuy.MenuActivity;
 import com.icb.icanbuy.R;
 
 import java.util.concurrent.ExecutionException;
+=======
+import com.icb.icanbuy.R;
+
+import java.util.concurrent.ExecutionException;
+import com.icb.icanbuy.MenuActivity;
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
 import java.util.concurrent.ExecutionException;
 public class Scanner extends AppCompatActivity {
@@ -59,6 +66,10 @@ public class Scanner extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         requestCamera();
     }

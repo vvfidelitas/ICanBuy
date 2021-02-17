@@ -24,6 +24,7 @@ public class TarjetaPago extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_pago);
 
+<<<<<<< HEAD
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
             if(bundle.getString("some") != null);
@@ -33,6 +34,8 @@ public class TarjetaPago extends AppCompatActivity {
 
         }
 
+=======
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         cardForm = findViewById(R.id.card_form);
         buy = findViewById(R.id.btnBuy);
         cardForm.cardRequired(true)

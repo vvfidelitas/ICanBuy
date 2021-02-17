@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
+=======
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.sesion.SesionFragment">
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/textView3"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"
@@ -37,3 +43,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</FrameLayout>
+>>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
