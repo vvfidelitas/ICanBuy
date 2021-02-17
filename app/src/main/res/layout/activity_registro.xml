@@ -48,7 +48,7 @@
                     />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/edt_Nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -62,7 +62,7 @@
                     android:textColorHint="@color/white" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/edt_Apellido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -74,8 +74,8 @@
                     android:inputType="textPersonName"
                     android:textColorHint="@color/white" />
 
-                <EditText
-                    android:id="@+id/editTextDate"
+                <Button
+                    android:id="@+id/picker_FechaNac"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -85,6 +85,7 @@
                     android:ems="10"
                     android:hint="Fecha de Nacimiento"
                     android:inputType="date"
+                    android:onClick="showDatePickerDialog"
                     android:textColorHint="@color/white" />
 
                 <EditText
@@ -135,7 +136,7 @@
                     android:textColor="@color/white" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_Registro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"

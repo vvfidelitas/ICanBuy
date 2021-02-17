@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,12 +16,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.icb.icanbuy.models.Usuario.Usuario;
+import com.icb.icanbuy.services.DALService;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton signin;
     int RC_SIGN_IN = 0;
     GoogleSignInClient mGoogleSignInClient;
+    String correo;
+    String password;
+    EditText edt_Correo = findViewById(R.id.edt_Correo);
+    EditText edt_Pass = findViewById(R.id.edt_Pass);
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,4 +104,25 @@ public class MainActivity extends AppCompatActivity {
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
     }
+    @Override
+    public void onStart(){
+        super.onStart();
+        Usuario usuario;
+        Actualizar_Interfaz(usuario);
+    }
+    private void Actualizar_Interfaz(Usuario usuario){
+        if(usuario!=null){
+            Intent intent = new Intent(this,MenuActivity.class);
+            startActivity(intent);
+        }
+    }
+    //Ingreso de usuarios existentes
+    public void Ingreso(View view){
+        String correo = edt_Correo.getText().toString();
+        String contrasena = edt_Pass.getText().toString();
+
+        DALService.HttpLoadUsuarios
+    }
+
+
 }

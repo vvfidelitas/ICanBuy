@@ -7,9 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 public class Registro extends AppCompatActivity {
     private EditText txtCorreo;
+    private EditText edtNombre;
+    private EditText edtApellido;
+    private EditText edtFechaNac;
+    private Button btnRegistro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +39,9 @@ public class Registro extends AppCompatActivity {
 
             }
         });
+    }
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 }
