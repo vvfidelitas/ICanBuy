@@ -50,4 +50,11 @@
     <string name="bt_exit">Salir de la aplicacion</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_name">Campo obligatorio</string>
+    <string name="invalid_email">Ingrese un correo válido</string>
+    <string name="invalid_password">Contraseña demasiado débil</string>
+    <string name="invalid_password1">Digite al menos 6 caracteres, 1 minúscula, 1 mayúscula, 1 carácter especial</string>
+    <string name="invalid_confirm_password">Las contraseñas no coinciden</string>
+
+
 </resources>
