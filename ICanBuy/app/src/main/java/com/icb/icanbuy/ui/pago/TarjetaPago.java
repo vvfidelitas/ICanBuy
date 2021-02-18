@@ -1,14 +1,14 @@
 package com.icb.icanbuy.ui.pago;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.braintreepayments.cardform.view.CardForm;
 import com.icb.icanbuy.R;
@@ -24,6 +24,7 @@ public class TarjetaPago extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_pago);
 
+
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
             if(bundle.getString("some") != null);
@@ -32,6 +33,7 @@ public class TarjetaPago extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
 
         }
+
 
         cardForm = findViewById(R.id.card_form);
         buy = findViewById(R.id.btnBuy);

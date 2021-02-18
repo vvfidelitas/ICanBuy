@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.cupones.CuponesFragment"
-    android:background="@drawable/side_nav_bar"
+    android:background="@drawable/side_nav_bar1"
     >
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondom"
+        android:scaleType="centerCrop"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#d8000000"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,14 +59,14 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
-            android:background="@drawable/dia">
+            android:background="@drawable/dia1">
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
-            android:background="@drawable/carne">
+            android:background="@drawable/carne1">
         </RelativeLayout>
 
 
@@ -57,3 +74,4 @@
 
 
 </ScrollView>
+

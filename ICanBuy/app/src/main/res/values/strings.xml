@@ -46,8 +46,10 @@
 
     <string name="bt_save_card_checkbox_name">Guardar tarjeta</string>
 
+
     <string name="tv_exit">Al presionar el botón de abajo se saldrá de la aplicación</string>
     <string name="bt_exit">Salir de la aplicacion</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

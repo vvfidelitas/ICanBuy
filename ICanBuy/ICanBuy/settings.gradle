@@ -1,3 +1,0 @@
-include ':modulo1'
-include ':app'
-rootProject.name = "I Can Buy"
