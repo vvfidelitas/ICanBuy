@@ -38,20 +38,20 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
-            android:background="@drawable/maxi_pali"></RelativeLayout>
+            android:background="@drawable/maxi_pali1"></RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
-            android:background="@drawable/walmart">
+            android:background="@drawable/walmart1">
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
-            android:background="@drawable/automercado">
+            android:background="@drawable/automercado1">
         </RelativeLayout>
 
 

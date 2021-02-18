@@ -1,5 +1,14 @@
 package com.icb.icanbuy.ui.scanner;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Size;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.Camera;
@@ -12,29 +21,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.Size;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
 import com.google.common.util.concurrent.ListenableFuture;
-<<<<<<< HEAD
-import com.icb.icanbuy.MainActivity;
 import com.icb.icanbuy.MenuActivity;
 import com.icb.icanbuy.R;
-
-import java.util.concurrent.ExecutionException;
-=======
-import com.icb.icanbuy.R;
-
-import java.util.concurrent.ExecutionException;
-import com.icb.icanbuy.MenuActivity;
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
 import java.util.concurrent.ExecutionException;
 public class Scanner extends AppCompatActivity {
@@ -66,10 +55,7 @@ public class Scanner extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         requestCamera();
     }

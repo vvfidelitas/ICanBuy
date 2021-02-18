@@ -1,13 +1,6 @@
 package com.icb.icanbuy;
 
-<<<<<<< HEAD
-=======
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.PasswordAuthentication;
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,14 +8,11 @@ import java.io.OutputStream;
 import java.security.Security;
 import java.util.Properties;
 
-<<<<<<< HEAD
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-=======
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -35,11 +25,9 @@ public class GMailSender extends javax.mail.Authenticator{
     private Session session;
 
     static {
-<<<<<<< HEAD
+
         Security.addProvider(new JSSEProvider());
-=======
-        Security.addProvider(new com.icb.icanbuy.JSSEProvider());
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
+
     }
 
     public GMailSender(String user, String password) {

@@ -1,176 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#08851f">
+    android:background="#08851f"
+    tools:context=".MainActivity">
 
-    <ImageView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondom"
-        android:scaleType="centerCrop"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:background="#d8000000"
-        android:gravity="center"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent">
 
-    <EditText
-<<<<<<< HEAD
-        android:id="@+id/edt_Correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/verdeclaro"
-        android:ems="10"
-        android:hint="Correo"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
-=======
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Correo"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/verdeclaro"
-        android:inputType="textPersonName"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#08851f">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="730dp"
+                android:contentDescription="fondo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fondom" />
 
-    <EditText
-<<<<<<< HEAD
-        android:id="@+id/edt_Pass"
-=======
-        android:id="@+id/editTextTextPassword"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:textColorHint="@color/white"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toBottomOf="@+id/edt_Correo"
-=======
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        android:backgroundTint="@color/verdeclaro"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-<<<<<<< HEAD
-        android:layout_width="406dp"
-        android:layout_height="191dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-=======
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icblogo" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#d8000000"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonIngreso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Ingresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toBottomOf="@+id/edt_Pass"
-=======
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        android:background="@drawable/button_rounded"/>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="406dp"
+                    android:layout_height="191dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icblogo" />
 
-    <Button
-        android:id="@+id/buttonRegistro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="Registro"
-        android:background="@drawable/button_rounded_borde"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonIngreso"
+                <EditText
+                    android:id="@+id/edt_Correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:backgroundTint="@color/verdeclaro"
+                    android:ems="10"
+                    android:hint="Correo"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        />
+                <EditText
+                    android:id="@+id/edt_Pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/verdeclaro"
+                    android:ems="10"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_Correo" />
 
-    <ImageButton
-<<<<<<< HEAD
-        android:id="@+id/sign_in_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_social"
-=======
-        android:id="@+id/imageButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.793"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
-<<<<<<< HEAD
-        app:srcCompat="@drawable/google" />
-=======
-        app:srcCompat="@drawable/google"
-        android:background="@drawable/button_social"/>
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-<<<<<<< HEAD
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="128dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
-        app:srcCompat="@drawable/facebook" />
-=======
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="128dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegistro"
-        app:srcCompat="@drawable/facebook"
-        android:background="@drawable/button_social"/>
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
+                <Button
+                    android:id="@+id/buttonIngreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/button_rounded"
+                    android:onClick="Ingreso"
+                    android:text="Ingresar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_Pass" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/buttonRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/button_rounded_borde"
+                    android:text="Registro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonIngreso"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginEnd="0dp"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="3dp"
+                    >
+
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/sign_in_button"
+                        android:layout_width="169dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/button_social"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/google" />
+
+                    <com.facebook.login.widget.LoginButton
+                        android:id="@+id/sign_face"
+                        android:layout_width="209dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sign_in_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="120dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="128dp"
+                        android:background="@drawable/button_social"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/facebook" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

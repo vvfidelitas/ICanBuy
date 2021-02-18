@@ -6,15 +6,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/home"
+            android:icon="@drawable/home1"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_favoritos"
-            android:icon="@drawable/favoritos"
+            android:icon="@drawable/favoritos1"
             android:title="@string/menu_favoritos" />
         <item
             android:id="@+id/nav_cupones"
-            android:icon="@drawable/cupones"
+            android:icon="@drawable/cupones1"
             android:title="@string/menu_cupones" />
         <item
             android:id="@+id/nav_pago"
@@ -22,7 +22,7 @@
             android:title="@string/menu_pago" />
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/perfil"
+            android:icon="@drawable/perfil1"
             android:title="@string/menu_perfil" />
         <item
             android:id="@+id/nav_sesion"

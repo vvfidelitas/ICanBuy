@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.icb.icanbuy">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.icb.icanbuy"
+    tools:ignore="MissingLeanbackLauncher">
 
-<<<<<<< HEAD
-=======
-    <uses-permission android:name="android.permission.INTERNET" />
 
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,23 +19,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ICanBuy">
-<<<<<<< HEAD
-        <activity android:name=".ui.scanner.Scanner"></activity>
-        <activity android:name=".ui.pago.TarjetaPago"></activity>
-=======
-        <!--<activity android:name=".ui.scanner.Scanner"></activity>-->
+
+
+
+        <activity
+            android:name=".ui.terminos.TermActivity"/>
+
+        <activity android:name=".ui.scanner.Scanner" />
         <activity android:name=".ui.pago.TarjetaPago" />
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
         <activity android:name=".Registro" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.ICanBuy.NoActionBar" />
-<<<<<<< HEAD
         <activity android:name=".MainActivity">
-=======
-        <activity android:name=".ui.scanner.Scanner">
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +49,6 @@
             </intent-filter>
         </activity>
     </application>
-<<<<<<< HEAD
+    <uses-permission android:name="android.permission.INTERNET" />
 
-=======
->>>>>>> a7640fcbb7a06ec37802dcbee1cda216f9ea2582
 </manifest>
