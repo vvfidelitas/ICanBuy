@@ -176,6 +176,8 @@ public class Registro extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
+                                Intent intent = new Intent(Registro.this, MainActivity.class);
+                                startActivity(intent);
                             }
                         });
 
@@ -203,8 +205,7 @@ public class Registro extends AppCompatActivity {
                                                     edt_Contrasena.setText("");
 
                                                     FirebaseAuth.getInstance().signOut();
-                                                    Intent intent = new Intent(Registro.this, MainActivity.class);
-                                                    startActivity(intent);
+
                                                 }else{
                                                     Toast.makeText(Registro.this,
                                                             task.getException().getMessage(),
