@@ -76,6 +76,7 @@ public class Registro extends AppCompatActivity {
         checkBox = findViewById(R.id.checkBox);
         btn = findViewById(R.id.btn_Registro);
         txTerminos = findViewById(R.id.txTerminos);
+        btn.setVisibility(View.INVISIBLE);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
