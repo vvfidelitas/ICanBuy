@@ -108,7 +108,7 @@
 
                     />
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="277dp"
                     android:layout_alignParentEnd="true"
@@ -117,20 +117,26 @@
 
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:paddingTop="3dp"
-                    >
+                    android:paddingTop="3dp">
 
                     <com.google.android.gms.common.SignInButton
                         android:id="@+id/sign_in_button"
                         android:layout_width="169dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="1dp"
-                        android:background="@drawable/button_social"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="121dp"
+                        android:layout_marginTop="36dp"
+                        android:layout_marginEnd="121dp"
+                        android:layout_marginBottom="183dp"
+                        android:background="@drawable/button_social"
                         android:gravity="center"
                         android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/google" />
 
                     <com.facebook.login.widget.LoginButton
@@ -140,14 +146,19 @@
                         android:layout_below="@id/sign_in_button"
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="120dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="128dp"
+                        android:layout_marginStart="101dp"
+                        android:layout_marginTop="124dp"
+                        android:layout_marginEnd="101dp"
+                        android:layout_marginBottom="121dp"
                         android:background="@drawable/button_social"
                         android:gravity="center"
                         android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/facebook" />
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
