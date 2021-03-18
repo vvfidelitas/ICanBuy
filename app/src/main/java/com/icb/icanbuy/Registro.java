@@ -1,6 +1,7 @@
 package com.icb.icanbuy;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,19 +25,31 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.icb.icanbuy.models.Usuario.Usuario;
 import com.icb.icanbuy.ui.terminos.TermActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity {
-    private EditText Nombre;
-    private EditText Apellido;
-    private EditText FechaNacimiento;
+    private EditText edt_Nombre, edt_Apellido,edt_FechaNacimiento;
     private Button btnRegistro;
     EditText ConfirmarPass;
     DatePickerDialog.OnDateSetListener setListener;
     TextView txTerminos;
+    ProgressDialog dialog;
+    private Usuario user;
+    private FirebaseDatabase database;
+    private DatabaseReference mDatabase;
+    private static final String USERS = "Users";
+    private String TAG = "RegisterActivity";
+    private FirebaseAuth mAuth;
+   private Date Fechadate1;
 
     CheckBox checkBox;
     Button btn;
@@ -67,9 +80,9 @@ public class Registro extends AppCompatActivity {
         //Obtenemos una instancia de el Autenticador
         Autenticador = FirebaseAuth.getInstance();
 
-        Nombre=(EditText)findViewById(R.id.edt_Nombre);
-        Apellido=(EditText)findViewById(R.id.edt_Apellido);
-        FechaNacimiento=(EditText)findViewById(R.id.picker_FechaNac);
+        edt_Nombre=(EditText)findViewById(R.id.edt_Nombre);
+        edt_Apellido=(EditText)findViewById(R.id.edt_Apellido);
+        edt_FechaNacimiento=(EditText)findViewById(R.id.picker_FechaNac);
         edt_Correo=(EditText)findViewById(R.id.edt_Correo);
         edt_Contrasena=(EditText)findViewById(R.id.edt_Pass);
         ConfirmarPass=(EditText)findViewById(R.id.edt_PassConfirmar);
@@ -78,12 +91,15 @@ public class Registro extends AppCompatActivity {
         txTerminos = findViewById(R.id.txTerminos);
         btn.setVisibility(View.INVISIBLE);
 
+        database = FirebaseDatabase.getInstance();
+        mDatabase = database.getReference(USERS);
+
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        FechaNacimiento.setOnClickListener(new View.OnClickListener() {
+        edt_FechaNacimiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -92,7 +108,7 @@ public class Registro extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month+1;
                         String date = day+"/"+month+"/"+year;
-                        FechaNacimiento.setText(date);
+                        edt_FechaNacimiento.setText(date);
                     }
                 },year,month,day);
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
@@ -156,18 +172,27 @@ public class Registro extends AppCompatActivity {
 
     private void Acutalizar_Interfaz(FirebaseUser usuario) {
         if (usuario != null) {
+            String keyid = mDatabase.push().getKey();
+            mDatabase.child(keyid).setValue(user); //agregar info de usuario a la BD
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
         }
     }
 
-
-
-
     //Creacion de nuevos usuarios
     public void Registro(View view) {
         String Correo = edt_Correo.getText().toString();
         String Contrasena = edt_Contrasena.getText().toString();
+        String NombreString=edt_Nombre.getText().toString();
+        String ApellidoString = edt_Apellido.getText().toString();
+        String FechaNac=edt_FechaNacimiento.toString();
+
+        try {
+            Fechadate1 = new SimpleDateFormat("dd/MM/yyyy").parse(FechaNac);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         AlertDialog.Builder dialog = new AlertDialog.Builder(this)
                 .setTitle("Verificación de correo")
                 .setMessage("Se le ha enviado un link a su correo. " +
@@ -200,6 +225,24 @@ public class Registro extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
+                                                    Usuario user= new Usuario(NombreString, ApellidoString,
+                                                            FechaNac, Correo );
+
+                                                    FirebaseDatabase.getInstance().getReference("Users")
+                                                            .child(FirebaseAuth.getInstance()
+                                                            .getCurrentUser().getUid()).setValue(user)
+                                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    if (task.isSuccessful()) {
+                                                                        Toast.makeText(Registro.this,
+                                                                                getString(R.string.registration_success),
+                                                                                Toast.LENGTH_LONG).show();
+
+                                                                    }
+                                                                }
+                                                            });
+
                                                     AlertDialog alert11 = dialog.create();
                                                     dialog.show();
                                                     edt_Correo.setText("");
@@ -263,9 +306,9 @@ public class Registro extends AppCompatActivity {
     //Validación de campos login
     public boolean validar(){
         boolean retorno=true;
-        String c1=Nombre.getText().toString();
-        String c2=Apellido.getText().toString();
-        String c3=FechaNacimiento.getText().toString();
+        String c1=edt_Nombre.getText().toString();
+        String c2=edt_Apellido.getText().toString();
+        String c3=edt_FechaNacimiento.getText().toString();
         String c4=edt_Correo.getText().toString();
         String c5=edt_Contrasena.getText().toString();
         String c6=ConfirmarPass.getText().toString();
@@ -273,17 +316,17 @@ public class Registro extends AppCompatActivity {
         //Se validan si los campos están vacios
         if(c1.isEmpty())
         {
-            Nombre.setError("Este campo es obligatorio");
+            edt_Nombre.setError("Este campo es obligatorio");
             retorno=false;
         }
         if(c2.isEmpty())
         {
-            Apellido.setError("Este campo es obligatorio");
+            edt_Apellido.setError("Este campo es obligatorio");
             retorno=false;
         }
         if(c3.isEmpty())
         {
-            FechaNacimiento.setError("Este campo es obligatorio");
+            edt_FechaNacimiento.setError("Este campo es obligatorio");
             retorno=false;
         }
         if(c4.isEmpty())
@@ -323,5 +366,62 @@ public class Registro extends AppCompatActivity {
         return retorno;
 
     }
+/*
+    class GuardarDatos extends AsyncTask{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog=new ProgressDialog(MainActivity.this);
+            dialog.setMessage("Sincronizando datos...");
+            dialog.setCancelable(false);
+            dialog.show();
+        }
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+
+            String c1=Nombre.getText().toString();
+            String c2=Apellido.getText().toString();
+            String c3=FechaNacimiento.getText().toString();
+            String c4=edt_Correo.getText().toString();
+            String c5=edt_Contrasena.getText().toString();
+            String c6=ConfirmarPass.getText().toString();
+            try{
+                String urlParameters  = "c1=a&c2=b&c3=c&c4=d&c5=e&c6=f";
+
+            byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+            int    postDataLength = postData.length;
+            String request        = "http://example.com/index.php";
+            URL    url            = new URL( request );
+            HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+            conn.setDoOutput( true );
+            conn.setInstanceFollowRedirects( false );
+            conn.setRequestMethod( "POST" );
+            conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestProperty( "charset", "utf-8");
+            conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+            conn.setUseCaches( false );
+            try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+                wr.write( postData );
+            }catch (IOException ex){
+                    ex.printStackTrace();
+                }
+
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            if(dialog.isShowing()){
+                dialog.dismiss();
+            }
+        }
+    }*/
 }
 

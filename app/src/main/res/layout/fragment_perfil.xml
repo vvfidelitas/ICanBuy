@@ -31,6 +31,7 @@
                     android:background="@drawable/circle_border">
 
                     <ImageView
+                        android:id="@+id/iv_fotoperfil"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_margin="9dp"
@@ -56,7 +57,7 @@
 
 
                 <TextView
-                    android:id="@+id/tv_address"
+                    android:id="@+id/tv_fecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_name"
@@ -103,6 +104,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_compras"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -114,7 +116,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="followers"
+                            android:text="compras realizadas"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
@@ -140,6 +142,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_cupones"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -151,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="following"
+                            android:text="cupones"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
@@ -189,6 +192,7 @@
                             android:textSize="13sp" />
 
                         <TextView
+                            android:id="@+id/tv_Correo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -218,6 +222,7 @@
                             android:textSize="13sp" />
 
                         <TextView
+                            android:id="@+id/tv_telefono"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -247,6 +252,7 @@
                             android:textSize="13sp" />
 
                         <TextView
+                            android:id="@+id/tv_tipoID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -276,6 +282,7 @@
                             android:textSize="13sp" />
 
                         <TextView
+                            android:id="@+id/tv_cedula"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"

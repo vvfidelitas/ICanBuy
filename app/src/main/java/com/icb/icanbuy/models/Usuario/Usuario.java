@@ -4,30 +4,32 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Root
 public class Usuario implements Serializable {
     @Element
-    private int idUsuario;
+    public int idUsuario;
     @Element
-    private String nombre;
+    public String nombre;
     @Element
-    private String apellido;
+    public String apellido;
     @Element
-    private Date fechaNac;
+    public String fechaNac;
     @Element
-    private String correo;
+    public String correo;
     @Element
-    private String contrasena;
+    public String contrasena;
 
-    public Usuario(int idUsuario, String nombre, String apellido, Date fechaNac, String correo, String contrasena) {
-        this.idUsuario = idUsuario;
+    public static int count = 0;
+
+    public Usuario( String nombre, String apellido, String fechaNac, String correo) {
+        //this.idUsuario = idUsuario;
+        setIdUsuario(++count);
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.correo = correo;
-        this.contrasena = contrasena;
+       // this.contrasena = contrasena;
     }
 
     public Usuario() {
@@ -57,11 +59,11 @@ public class Usuario implements Serializable {
         this.apellido = apellido;
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
 

@@ -1,6 +1,5 @@
 package com.icb.icanbuy.models.Usuario;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +7,7 @@ public class UsuarioFields {
     private int idUsuario;
     private String nombre;
     private String apellido;
-    private Date fechaNac;
+    private String fechaNac;
     private String correo;
     private String contrasena;
 
@@ -38,11 +37,11 @@ public class UsuarioFields {
         this.apellido = apellido;
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
 
