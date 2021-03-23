@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="verdelima">#7DFF01</color>
+    <color name="verdelogo">#08851f</color>
+    <color name="verdeclaro">#61ed5a</color>
+    <color name="icb_green">#33B53E</color>
+    <color name="icb_white">#FFFFFF</color>
+    <color name="icb_main_button_green">#80C180</color>
+    <color name="icb_dark_green">#247F2B</color>
+    <color name="icb_grey">#F2F2F2</color>
+    <color name="icb_dark_blue">#22499c</color>
+    <color name="icb_light_blue">#2b72ff</color>
+    <color name="icb_other_green">#08851f</color>
+    <color name="icb_neon_green">#61ed5a</color>
+    <color name="icb_yellow">#d4db4f</color>
+    <color name="colorAccent">#22499c</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+
+
+    <color name="address">#2F7092</color>
+    <color name="followers">#0D5D98</color>
+    <color name="headings">#3797CF</color>
+
+    <color name="solidCircle">#AAFFFFFF</color>
+    <color name="circleBorder">#50FFFFFF</color>
+    <color name="gradEnd">#67EFC8</color>
+    <color name="gradStart">#63C9FF</color>
+    <color name="followersBg">#65DCE5</color>
+    <color name="followingBg">#49BEFF</color>
+    <color name="grey">#E5E5E5</color>
+    <color name="background_gradient_start">#000000</color>
+    <color name="background_gradient_end">#DDDDDD</color>
+    <color name="fastlane_background">#0096a6</color>
+    <color name="search_opaque">#ffaa3f</color>
+    <color name="selected_background">#ffaa3f</color>
+    <color name="default_background">#3d3d3d</color>
+
+</resources>
