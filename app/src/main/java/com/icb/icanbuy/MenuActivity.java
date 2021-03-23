@@ -2,6 +2,7 @@ package com.icb.icanbuy;
 
 import android.net.Uri;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,10 +15,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+=======
+import android.view.View;
+import android.view.Menu;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+<<<<<<< HEAD
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +33,21 @@ public class MenuActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
+=======
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class MenuActivity extends AppCompatActivity {
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -35,10 +56,13 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+<<<<<<< HEAD
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +83,11 @@ public class MenuActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+<<<<<<< HEAD
         //updateNavHeader();
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
@@ -69,7 +96,10 @@ public class MenuActivity extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     }
 
     @Override
@@ -85,6 +115,7 @@ public class MenuActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+<<<<<<< HEAD
 
     /*public void updateNavHeader(){
 
@@ -98,3 +129,6 @@ public class MenuActivity extends AppCompatActivity {
         //navUserName.setText(currentUser.getDisplayName());
 }*/
 }
+=======
+}
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a

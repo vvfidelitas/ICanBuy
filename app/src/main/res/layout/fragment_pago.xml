@@ -36,7 +36,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/button3"
+=======
+        android:id="@+id/btnRegistro"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         android:layout_width="325dp"
         android:layout_height="55dp"
         android:layout_marginStart="44dp"

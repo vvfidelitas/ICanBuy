@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ICanBuy
 
 <img src="logo.png" width="350" alt="accessibility text">
@@ -51,3 +52,6 @@ Después de esto, con la tablet, el usuario podrá escanear el código de barras
     
 
 
+=======
+# ICanBuy
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a

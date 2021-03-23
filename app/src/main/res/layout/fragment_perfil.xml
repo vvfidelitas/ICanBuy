@@ -19,7 +19,11 @@
                 android:id="@+id/rellay1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:background="@drawable/grad1"
+=======
+                android:background="@drawable/grad"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                 android:paddingBottom="20dp">
 
                 <RelativeLayout
@@ -31,12 +35,19 @@
                     android:background="@drawable/circle_border">
 
                     <ImageView
+<<<<<<< HEAD
                         android:id="@+id/iv_fotoperfil"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_margin="9dp"
                         android:adjustViewBounds="true"
+<<<<<<< HEAD
                         android:background="@drawable/circle1"
+=======
+                        android:background="@drawable/circle"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                         android:padding="3dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/usuario" />
@@ -57,7 +68,11 @@
 
 
                 <TextView
+<<<<<<< HEAD
                     android:id="@+id/tv_fecha"
+=======
+                    android:id="@+id/tv_address"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_name"
@@ -76,7 +91,11 @@
                     android:layout_marginTop="15dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
+<<<<<<< HEAD
                     android:src="@drawable/ic_settings1" />
+=======
+                    android:src="@drawable/ic_settings" />
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
             </RelativeLayout>
 
@@ -104,7 +123,10 @@
                         android:orientation="vertical">
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_compras"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -116,7 +138,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
+<<<<<<< HEAD
                             android:text="compras realizadas"
+=======
+                            android:text="followers"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
@@ -142,7 +168,10 @@
                         android:orientation="vertical">
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_cupones"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -154,7 +183,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
+<<<<<<< HEAD
                             android:text="cupones"
+=======
+                            android:text="following"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
@@ -192,7 +225,10 @@
                             android:textSize="13sp" />
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_Correo"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -222,7 +258,10 @@
                             android:textSize="13sp" />
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_telefono"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -252,7 +291,10 @@
                             android:textSize="13sp" />
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_tipoID"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
@@ -282,7 +324,10 @@
                             android:textSize="13sp" />
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/tv_cedula"
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"

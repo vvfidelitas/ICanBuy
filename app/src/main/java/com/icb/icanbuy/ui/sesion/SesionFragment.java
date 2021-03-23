@@ -2,10 +2,18 @@ package com.icb.icanbuy.ui.sesion;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,11 +26,15 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 import com.icb.icanbuy.MainActivity;
+=======
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import com.icb.icanbuy.R;
 
 
 public class SesionFragment extends Fragment {
 
+<<<<<<< HEAD
     private Button btExit;
     private Button btn_Salir;
     GoogleApiClient mGoogleApiClient;
@@ -72,6 +84,8 @@ public class SesionFragment extends Fragment {
 
 }
 /*
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     Button btExit;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -90,8 +104,12 @@ public class SesionFragment extends Fragment {
 
         return root;
     }
+<<<<<<< HEAD
 
  */
+=======
+}
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
 
 

@@ -16,10 +16,18 @@
         android:id="@+id/activity_scanner_qrCodeFoundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
 
         android:text="QR encontrado"
         app:layout_constraintBottom_toBottomOf="@+id/activity_scanner_previewView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
+=======
+        android:onClick="Scanner"
+        android:text="QR encontrado"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_scanner_previewView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 </androidx.constraintlayout.widget.ConstraintLayout>

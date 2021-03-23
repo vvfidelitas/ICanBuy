@@ -1,5 +1,11 @@
 package com.icb.icanbuy.ui.pago;
 
+<<<<<<< HEAD
+=======
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
@@ -7,9 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import com.braintreepayments.cardform.view.CardForm;
 import com.icb.icanbuy.R;
 
@@ -24,7 +33,10 @@ public class TarjetaPago extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_pago);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         Bundle bundle = getIntent().getExtras();
         if (bundle !=null){
             if(bundle.getString("some") != null);
@@ -34,7 +46,10 @@ public class TarjetaPago extends AppCompatActivity {
 
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         cardForm = findViewById(R.id.card_form);
         buy = findViewById(R.id.btnBuy);
         cardForm.cardRequired(true)

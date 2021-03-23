@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.sesion.SesionFragment">
 
+<<<<<<< HEAD
 
     <TextView
         android:id="@+id/txt_cerrar_sesion"
@@ -21,11 +28,28 @@
         android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Salir"
         tools:layout_editor_absoluteX="-16dp" />
+=======
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/button_border"
+        android:backgroundTintMode="add"
+        android:text="@string/tv_exit"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
     <Button
         android:id="@+id/btExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginBottom="36dp"
         android:background="@drawable/button_border"
         android:text="@string/bt_exit"
@@ -64,3 +88,16 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+=======
+        android:layout_marginTop="180dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#53DAC5"
+        android:text="@string/bt_exit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a

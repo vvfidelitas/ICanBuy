@@ -1,5 +1,9 @@
 package com.icb.icanbuy;
 
+<<<<<<< HEAD
+=======
+import androidx.appcompat.app.AppCompatActivity;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,10 +22,16 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+=======
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+<<<<<<< HEAD
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,11 +58,29 @@ public class MainActivity extends AppCompatActivity {
     //Instanciamos el autenticador de Firebase
     private FirebaseAuth Autenticador;
 
+=======
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
+import com.icb.icanbuy.models.Usuario.Usuario;
+import com.icb.icanbuy.ui.scanner.Scanner;
+
+public class MainActivity extends AppCompatActivity {
+    //Ingreso
+    EditText Correo;
+    EditText Password;
+
+    Usuario usuario;
+
+    ImageButton signin;
+    int RC_SIGN_IN = 0;
+    GoogleSignInClient mGoogleSignInClient;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         //Enlazamos los componentes de la interfaz
         edt_Contrasena = findViewById(R.id.edt_Pass);
         edt_Correo = findViewById(R.id.edt_Correo);
@@ -65,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
 
         signin = findViewById(R.id.sign_in_button);
 
+=======
+        Correo=(EditText)findViewById(R.id.etCorreo);
+        Password=(EditText)findViewById(R.id.etPassword);
+
+        signin = findViewById(R.id.sign_in_button);
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,11 +112,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
 
         /*Configure el inicio de sesión para solicitar el ID del usuario,
         la dirección de correo electrónico.
         El ID y el perfil básico están incluidos en DEFAULT_SIGN_IN.*/
 
+=======
+        /*Configure el inicio de sesión para solicitar el ID del usuario,
+        la dirección de correo electrónico.
+        El ID y el perfil básico están incluidos en DEFAULT_SIGN_IN.*/
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -99,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+<<<<<<< HEAD
 
 
         //Facebook
@@ -249,6 +291,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+=======
+        /* Ingreso a la aplicación
+        Button bt = (Button) findViewById(R.id.buttonIngreso);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), MenuActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });*/
+    }
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -268,7 +322,17 @@ public class MainActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+<<<<<<< HEAD
 
+=======
+            account.getId();
+            /*https://api.airtable.com/v0/appPvM705sztvANQP/Usuario?filterByFormula={GoogleId}="elIdquemedagoogle"
+            resultado es igual al get del URL
+            si resultado es un usuario entonces la propiedad usuario es igual al resultado
+            si no
+            entonces hacer post
+            los datos se obtiene de acount (tabla de usuario agregar google id)*/
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
@@ -278,6 +342,7 @@ public class MainActivity extends AppCompatActivity {
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
     }
+<<<<<<< HEAD
 
 
 
@@ -288,3 +353,32 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+=======
+    public void Ingreso(View v){
+        if(validar()){
+            Toast.makeText(this, "Ingreso datos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Validación de campos login
+    public boolean validar(){
+        boolean retorno=true;
+        String c1=Correo.getText().toString();
+        String c2=Password.getText().toString();
+        //Se validan si los campos están vacios
+        if(c1.isEmpty())
+        {
+            Correo.setError("Este campo no puede quedar vacío");
+            retorno=false;
+        }
+        if(c2.isEmpty())
+        {
+            Password.setError("Este campo no puede quedar vacío");
+            retorno=false;
+        }
+
+
+        return retorno;
+    }
+}
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a

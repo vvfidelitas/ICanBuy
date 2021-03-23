@@ -19,7 +19,11 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+<<<<<<< HEAD
         android:background="@drawable/side_nav_bar1"
+=======
+        android:background="@drawable/side_nav_bar"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,5 +1,6 @@
 package com.icb.icanbuy.ui.scanner;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.Camera;
@@ -21,11 +24,31 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
+<<<<<<< HEAD
 import com.google.common.util.concurrent.ListenableFuture;
+=======
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.util.Size;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.common.util.concurrent.ListenableFuture;
+import com.icb.icanbuy.MainActivity;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import com.icb.icanbuy.MenuActivity;
 import com.icb.icanbuy.R;
 
 import java.util.concurrent.ExecutionException;
+<<<<<<< HEAD
+=======
+
+import java.util.concurrent.ExecutionException;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 public class Scanner extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CAMERA = 0;
     private PreviewView previewView;
@@ -55,7 +78,10 @@ public class Scanner extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         requestCamera();
     }

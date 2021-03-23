@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
+=======
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.cupones.CuponesFragment"
+<<<<<<< HEAD
     android:background="@drawable/side_nav_bar1"
     >
 
@@ -25,6 +30,11 @@
         android:layout_height="match_parent"
         />
 
+=======
+    android:background="@drawable/side_nav_bar"
+    >
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,19 +69,31 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
+<<<<<<< HEAD
             android:background="@drawable/dia1">
+=======
+            android:background="@drawable/dia">
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
+<<<<<<< HEAD
             android:background="@drawable/carne1">
+=======
+            android:background="@drawable/carne">
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         </RelativeLayout>
 
 
     </LinearLayout>
 
 
+<<<<<<< HEAD
 </ScrollView>
 
+=======
+</ScrollView>
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a

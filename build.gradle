@@ -3,11 +3,18 @@ buildscript {
     repositories {
         google()
         jcenter()
+<<<<<<< HEAD
         mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
         classpath 'com.google.gms:google-services:4.3.5'
+=======
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

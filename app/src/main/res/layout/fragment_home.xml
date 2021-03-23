@@ -38,20 +38,32 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
+<<<<<<< HEAD
             android:background="@drawable/maxi_pali1"></RelativeLayout>
+=======
+            android:background="@drawable/maxi_pali"></RelativeLayout>
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
+<<<<<<< HEAD
             android:background="@drawable/walmart1">
+=======
+            android:background="@drawable/walmart">
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="20dp"
+<<<<<<< HEAD
             android:background="@drawable/automercado1">
+=======
+            android:background="@drawable/automercado">
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         </RelativeLayout>
 
 

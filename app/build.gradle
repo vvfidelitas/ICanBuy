@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
+<<<<<<< HEAD
     id 'com.google.gms.google-services'
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 }
 
 android {
@@ -15,7 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+<<<<<<< HEAD
         vectorDrawables.useSupportLibrary = true
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     }
 
     buildTypes {
@@ -38,7 +44,10 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
         exclude("META-INF/*.kotlin_module")
+<<<<<<< HEAD
         exclude 'META-INF/services/javax.annotation.processing.Processor'
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     }
 }
 
@@ -53,6 +62,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.braintreepayments:card-form:3.1.1'
+<<<<<<< HEAD
     implementation files('libs/mail.jar')
     implementation files('libs/additionnal.jar')
     implementation files('libs/activation.jar')
@@ -60,6 +70,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'androidx.wear:wear:1.0.0'
 
+=======
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     def camerax_version = "1.0.0-beta07"
     implementation "androidx.camera:camera-camera2:$camerax_version"
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
@@ -67,9 +79,17 @@ dependencies {
     implementation 'androidx.camera:camera-camera2:1.0.0-beta12'
     implementation 'com.google.zxing:core:3.3.0'
 
+<<<<<<< HEAD
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
+=======
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    implementation 'com.basgeekball:awesome-validation:4.2'
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -80,6 +100,7 @@ dependencies {
         exclude group: 'xpp3', module: 'xpp3'
     }
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+<<<<<<< HEAD
 
 
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
@@ -108,4 +129,9 @@ dependencies {
     // implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
 
+=======
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
+
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 }

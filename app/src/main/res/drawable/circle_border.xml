@@ -5,4 +5,8 @@
     <stroke
         android:width="2dp"
         android:color="@color/circleBorder" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 </shape>

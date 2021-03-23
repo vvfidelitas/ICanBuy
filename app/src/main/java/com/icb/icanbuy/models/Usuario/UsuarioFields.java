@@ -1,5 +1,9 @@
 package com.icb.icanbuy.models.Usuario;
 
+<<<<<<< HEAD
+=======
+import java.util.Date;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +11,11 @@ public class UsuarioFields {
     private int idUsuario;
     private String nombre;
     private String apellido;
+<<<<<<< HEAD
     private String fechaNac;
+=======
+    private Date fechaNac;
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
     private String correo;
     private String contrasena;
 
@@ -37,11 +45,19 @@ public class UsuarioFields {
         this.apellido = apellido;
     }
 
+<<<<<<< HEAD
     public String getFechaNac() {
         return fechaNac;
     }
 
     public void setFechaNac(String fechaNac) {
+=======
+    public Date getFechaNac() {
+        return fechaNac;
+    }
+
+    public void setFechaNac(Date fechaNac) {
+>>>>>>> 3db4cc3027fc86728daeaea22102e24630b4fa1a
         this.fechaNac = fechaNac;
     }
 
