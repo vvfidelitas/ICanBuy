@@ -80,6 +80,8 @@ public class Registro extends AppCompatActivity {
         //Obtenemos una instancia de el Autenticador
         Autenticador = FirebaseAuth.getInstance();
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         edt_Nombre=(EditText)findViewById(R.id.edt_Nombre);
         edt_Apellido=(EditText)findViewById(R.id.edt_Apellido);
         edt_FechaNacimiento=(EditText)findViewById(R.id.picker_FechaNac);
@@ -185,10 +187,11 @@ public class Registro extends AppCompatActivity {
         String Contrasena = edt_Contrasena.getText().toString();
         String NombreString=edt_Nombre.getText().toString();
         String ApellidoString = edt_Apellido.getText().toString();
-        String FechaNac=edt_FechaNacimiento.toString();
+        String FechaNac=edt_FechaNacimiento.getText().toString();
 
         try {
             Fechadate1 = new SimpleDateFormat("dd/MM/yyyy").parse(FechaNac);
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -220,13 +223,15 @@ public class Registro extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+
                                 Autenticador.getCurrentUser().sendEmailVerification()
+
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
                                                     Usuario user= new Usuario(NombreString, ApellidoString,
-                                                            FechaNac, Correo );
+                                                            FechaNac, Correo,null,null,null );
 
                                                     FirebaseDatabase.getInstance().getReference("Users")
                                                             .child(FirebaseAuth.getInstance()
@@ -296,7 +301,7 @@ public class Registro extends AppCompatActivity {
             edt_Contrasena.setError("Debe ingresar una contraseña");
             return false;
         }else if(!PASSWORD_PATTERN.matcher(Contrasena).matches()) {
-            edt_Contrasena.setError("La contrasena es insegura, debe contener mayusculas,minusculas, numeros y al menos un caracter especial");
+            edt_Contrasena.setError("La contraseña es insegura, debe contener mayúsculas,minúsculas, números y al menos un caracter especial");
             return false;
         } else {
             edt_Contrasena.setError(null);

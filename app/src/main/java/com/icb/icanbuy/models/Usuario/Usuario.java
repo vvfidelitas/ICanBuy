@@ -20,16 +20,27 @@ public class Usuario implements Serializable {
     @Element
     public String contrasena;
 
+    @Element
+    public String telefono;
+    @Element
+    public String tipoID;
+    @Element
+    public String cedula;
+
+
     public static int count = 0;
 
-    public Usuario( String nombre, String apellido, String fechaNac, String correo) {
+    public Usuario( String nombre, String apellido, String fechaNac, String correo,
+                    String telefono, String tipoID, String cedula) {
         //this.idUsuario = idUsuario;
         setIdUsuario(++count);
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.correo = correo;
-       // this.contrasena = contrasena;
+        this.telefono=telefono;
+        this.tipoID=tipoID;
+        this.cedula=cedula;
     }
 
     public Usuario() {
@@ -81,5 +92,29 @@ public class Usuario implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getTipoID() {
+        return tipoID;
+    }
+
+    public void setTipoID(String tipoID) {
+        this.tipoID = tipoID;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 }

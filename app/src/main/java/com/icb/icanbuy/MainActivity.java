@@ -25,9 +25,11 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Arrays;
 
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         El ID y el perfil básico están incluidos en DEFAULT_SIGN_IN.*/
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -200,53 +203,8 @@ public class MainActivity extends AppCompatActivity {
             retorno=false;
         }
 
-
         return retorno;
     }
-
-
-/*
-    public class LoginUser extends AsyncTask<String,Void, String>{
-
-        @Override
-        protected String doInBackground(String... strings) {
-            String email = strings[0];
-            String password = strings[1];
-
-            OkHttpClient okHttpClient = new OkHttpClient();
-            RequestBody formBody = new FormBody.Builder()
-                    .add("user_id", email)
-                    .add("user_password", password)
-                    .build();
-
-            Request request = new Request.Builder()
-                    .url(urlLogin)
-                    .post(formBody)
-                    .build();
-
-            Response response =null;
-            try {
-                response = okHttpClient.newCall(request).execute();
-                if(response.isSuccessful()){
-                    String result = response.body().string();
-                    if(result.equalsIgnoreCase("login")){
-                        Intent i = new Intent(MainActivity.this, MenuActivity.class);
-                        startActivity(i);
-                        finish();
-                    }else{
-                        Toast.makeText(MainActivity.this,
-                                "Los datos ingresados no son correctos.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }*/
-
-
-
 
 
     private void signIn() {
@@ -267,15 +225,37 @@ public class MainActivity extends AppCompatActivity {
     }
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
+
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            Log.d("1", "firebaseAuthWithGoogle:" + account.getId());
 
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
+            firebaseAuthWithGoogle(account.getIdToken());
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
             startActivity(intent);
         } catch (ApiException e) {
             // El código de estado de ApiException indica el motivo detallado del error.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        Autenticador.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("1", "signInWithCredential:success");
+                            FirebaseUser user = Autenticador.getCurrentUser();
+                            Acutalizar_Interfaz(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("1", "signInWithCredential:failure", task.getException());
+                            Acutalizar_Interfaz(null);
+                        }
+                    }
+                });
     }
 
 

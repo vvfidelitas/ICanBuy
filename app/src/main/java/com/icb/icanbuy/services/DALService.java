@@ -86,6 +86,9 @@ public class DALService {
                 usuario.setFechaNac(r.getFields().getFechaNac());
                 usuario.setCorreo((r.getFields().getCorreo()));
                 usuario.setContrasena((r.getFields().getContrasena()));
+                usuario.setTelefono(null);
+                usuario.setTipoID(null);
+                usuario.setCedula(null);
                 usuarioList.addUsuario(usuario);
             }
             return usuarioList.getUsuarioList().size();

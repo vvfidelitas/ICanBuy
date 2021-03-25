@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/icb_white">
+    android:background="@color/icb_white"
+    android:id="@+id/fragmentPerfil">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -51,7 +52,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15sp"
                     android:fontFamily="sans-serif-light"
-                    android:text="Denilson Fallas"
+                    android:text="Nombre Apellido"
                     android:textColor="@color/white"
                     android:textSize="32sp" />
 
@@ -63,7 +64,7 @@
                     android:layout_below="@+id/tv_name"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="sans-serif"
-                    android:text="1/1/1999"
+                    android:text="fecha"
                     android:textAllCaps="true"
                     android:textColor="@color/address"
                     android:textSize="14sp" />
@@ -108,8 +109,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="453K"
-                            android:textColor="@color/white"
+                            android:text="0"
+                            android:textColor="@color/black"
                             android:textSize="25sp" />
 
                         <TextView
@@ -118,7 +119,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="compras realizadas"
                             android:textAllCaps="true"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="13sp" />
 
                     </LinearLayout>
@@ -146,9 +147,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="873"
-                            android:textColor="@color/white"
-                            android:textSize="25sp" />
+                            android:text="0"
+                            android:textColor="@color/followersBg"
+                            android:textSize="25sp"
+                            />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -156,7 +158,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="cupones"
                             android:textAllCaps="true"
-                            android:textColor="@color/white"
+                            android:textColor="@color/followersBg"
                             android:textSize="13sp" />
 
                     </LinearLayout>
@@ -196,7 +198,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="abc@gmail.com"
+                            android:text="Correo"
                             android:textColor="#000000"
                             android:textSize="18sp" />
 
@@ -226,7 +228,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="+1-202-555-0157"
+                            android:text="Teléfono"
                             android:textColor="#000000"
                             android:textSize="18sp" />
 
@@ -286,7 +288,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="1234567890"
+                            android:text="Número de cédula"
                             android:textColor="#000000"
                             android:textSize="18sp" />
 
@@ -297,11 +299,61 @@
                             android:background="@color/grey" />
 
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
 
+                      <Button
+                          android:id="@+id/btn_EditaPerfil"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Editar perfil"
+                          android:textColor="@android:color/white"
+                          android:background="@android:color/black"
+                          android:backgroundTint="@android:color/black"
+                          />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_BorrarPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Borrar perfil"
+                            android:textColor="@android:color/white"
+                            android:background="@android:color/black"
+                            android:backgroundTint="@android:color/black"
+                            />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </RelativeLayout>
+
+
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
