@@ -4,9 +4,6 @@
     package="com.icb.icanbuy"
     tools:ignore="MissingLeanbackLauncher">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <uses-feature android:name="android.hardware.type.watch" />
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
@@ -14,8 +11,9 @@
         android:name="android.hardware.touchscreen"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,28 +21,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ICanBuy">
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="true" />
 
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
 
         <activity
-            android:name=".ui.ScannerQR2.ScannerQRActivity"
-            android:label="@string/title_activity_scanner_q_r">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".ui.terminos.TermActivity"/>
+        <activity
+            android:name=".ui.ScannerQR2.ScannerQRActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.terminos.TermActivity" />
         <activity android:name=".ui.scanner.Scanner" />
         <activity android:name=".ui.pago.TarjetaPago" />
 

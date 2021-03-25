@@ -231,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
             firebaseAuthWithGoogle(account.getIdToken());
+
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
             startActivity(intent);
         } catch (ApiException e) {

@@ -6,22 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <com.braintreepayments.cardform.view.CardForm
-        android:id="@+id/card_form"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btnBuy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:text="@string/lbl_Agregar"
-        android:textColor="@android:color/white" />
+        android:layout_height="wrap_content">
+
+        <com.braintreepayments.cardform.view.CardForm
+            android:id="@+id/card_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            android:text="@string/lbl_Agregar"
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnSalirPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAccent"
+            android:text="Ir a inicio"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
+
 
 </RelativeLayout>

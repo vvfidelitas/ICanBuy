@@ -1,7 +1,5 @@
 package com.icb.icanbuy.ui.perfil;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -70,7 +68,7 @@ public static final String TAG="TAG";
 
         btn_GuardarCambios=root.findViewById(R.id.btn_GuardarCambios);
         btn_Cancelar=root.findViewById(R.id.btn_Cancelar);
-        btn_CambiarContrasena=root.findViewById(R.id.btn_CambiarContrasena);
+       // btn_CambiarContrasena=root.findViewById(R.id.btn_CambiarContrasena);
 
 
         Autenticador=FirebaseAuth.getInstance();
@@ -108,7 +106,7 @@ public static final String TAG="TAG";
                 Toast.makeText(EditarPerfil.this,"cambiar foto", Toast.LENGTH_SHORT).show();
             }
         });*/
-
+        /*
         btn_CambiarContrasena.setOnClickListener((v -> {
            resetPassword= new EditText(v.getContext());
 
@@ -152,7 +150,7 @@ public static final String TAG="TAG";
                     Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
 
-        }));//btn cambiar contraseña
+        }));//btn cambiar contraseña*/
 
         //boton guardar cambios
         btn_GuardarCambios.setOnClickListener(new View.OnClickListener() {

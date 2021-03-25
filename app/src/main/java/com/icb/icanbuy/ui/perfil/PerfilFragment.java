@@ -1,5 +1,6 @@
 package com.icb.icanbuy.ui.perfil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,7 +23,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.icb.icanbuy.MainActivity;
 import com.icb.icanbuy.R;
 import com.icb.icanbuy.models.Usuario.Usuario;
 
@@ -158,8 +161,29 @@ private static final String USERS="users";
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
+                                    Query profileQuery = reference.child(userID).orderByChild("correo").equalTo(correoString);
+
+                                    profileQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for(DataSnapshot perfilSnapshot: snapshot.getChildren()){
+                                                perfilSnapshot.getRef().removeValue();
+                                                Toast.makeText(getContext(),"Usuario borrado con éxito", Toast.LENGTH_SHORT).show();
+                                                Intent i = new Intent(getContext(), MainActivity.class);
+                                                startActivity(i);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            Log.e(TAG, "Cancelado", error.toException());
+                                            Toast.makeText(getContext(),"Error al borrar datos de usuario", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
 
                                     Log.d(TAG, "Cuenta borrada");
+                                }else{
+                                    Toast.makeText(getContext(),"Error al borrar usuario", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
