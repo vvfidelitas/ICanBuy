@@ -7,7 +7,7 @@
     <string name="title_activity_menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Dénilson Fallas Robles</string>
+    <string name="nav_header_title"></string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -16,7 +16,7 @@
     <string name="menu_cupones">Mis cupones</string>
     <string name="menu_pago">Métodos de pago</string>
     <string name="menu_perfil">Perfil</string>
-    <string name="menu_sesion">Cerrar sesión Dénilson Fallas</string>
+    <string name="menu_sesion">Cerrar sesión</string>
 
     <string name="label_agregar">Agregar</string>
     <string name="lbl_actualizar">Actualizar</string>
@@ -70,7 +70,7 @@
     </string>
 
     <string name="tv_exit">Al presionar el botón de abajo se saldrá de la aplicación</string>
-    <string name="bt_exit">Salir de la aplicacion</string>
+
     <string name="invalid_name">Campo obligatorio</string>
     <string name="invalid_email">Ingrese un correo válido</string>
     <string name="invalid_password">Contraseña demasiado débil</string>
@@ -80,19 +80,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_terminos">Leanback Title</string>
-    <string name="browse_title">Videos by Your Company</string>
-    <string name="related_movies">Related Videos</string>
-    <string name="grid_view">Grid View</string>
-    <string name="error_fragment">Error Fragment</string>
-    <string name="personal_settings">Personal Settings</string>
-    <string name="watch_trailer_1">Watch trailer</string>
-    <string name="watch_trailer_2">FREE</string>
-    <string name="rent_1">Rent By Day</string>
-    <string name="rent_2">From $1.99</string>
-    <string name="buy_1">Buy and Own</string>
-    <string name="buy_2">AT $9.99</string>
-    <string name="movie">Movie</string>
+    <string name="tv_Salir">Cerrar sesión Google</string>
+    <string name="tv_cerrar">Salir de la aplicación</string>
     <string name="registration_success">Registro exitoso</string>
+    <string name="bt_exit">Cerrar Sesión</string>
 
     <!-- Error messages -->
     <string name="error_fragment_message">An error occurred</string>

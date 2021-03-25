@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
 
     android:layout_width="match_parent"
@@ -11,40 +12,56 @@
 
 
     <TextView
-        android:id="@+id/textView3"
-        style="@style/Widget.AppCompat.TextView.SpinnerItem"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_cerrar_sesion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:background="@drawable/button_border"
-        android:backgroundTintMode="add"
-        android:text="@string/tv_exit"
+        android:layout_marginBottom="160dp"
+        android:text="@string/tv_cerrar"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Salir"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <Button
         android:id="@+id/btExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/button_border"
-        android:backgroundTint="#53DAC5"
         android:text="@string/bt_exit"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/txt_salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/txt_salir"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/tv_Salir"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Salir"
+        tools:layout_editor_absoluteX="16dp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_Salir"
+        android:layout_width="223dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/button_border"
+        android:text="Salir"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,5 +1,7 @@
 package com.icb.icanbuy.ui.perfil;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
 import com.icb.icanbuy.R;
 import com.icb.icanbuy.models.Usuario.Usuario;
 
@@ -38,6 +41,9 @@ public static final String TAG="TAG";
     private FirebaseAuth Autenticador;
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
+    private Uri RutaImg; //una Direccion
+    private final Integer CODIGO_SOLICITUD = 1234;//Identificador para nuestra app (proceso)
+    private StorageReference Almacenamiento;
     private String userID;
     private  Usuario usuario;
     //patrón para validar contraseña
@@ -98,14 +104,19 @@ public static final String TAG="TAG";
         edt_TipoID.setText(tipoID);
         edt_Cedula.setText(cedula);
 
-/*
+
 
         iv_fotoperfil.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(EditarPerfil.this,"cambiar foto", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent.createChooser(intent, "Seleccione una Imagen"), CODIGO_SOLICITUD);
             }
-        });*/
+        });
+
+
         /*
         btn_CambiarContrasena.setOnClickListener((v -> {
            resetPassword= new EditText(v.getContext());
