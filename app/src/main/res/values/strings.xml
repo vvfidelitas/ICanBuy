@@ -85,6 +85,10 @@
     <string name="registration_success">Registro exitoso</string>
     <string name="bt_exit">Cerrar Sesión</string>
 
+    <!--borrar cuenta-->
+    <string name="bt_eliminar">Eliminar cuenta</string>
+    <string name="validacion_eliminacion_cuenta">¿Desea eliminar su cuenta?</string>
+
     <!-- Error messages -->
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>

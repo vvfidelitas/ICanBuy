@@ -1,5 +1,6 @@
 package com.icb.icanbuy.ui.perfil;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -156,37 +158,56 @@ private static final String USERS="users";
             public void onClick(View v) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                user.delete()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Query profileQuery = reference.child(userID).orderByChild("correo").equalTo(correoString);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(v.getContext())
+                        .setTitle(R.string.bt_eliminar)
+                        .setMessage(R.string.validacion_eliminacion_cuenta)
+                        .setPositiveButton(
+                                "Sí",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        user.delete()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Query profileQuery = reference.child(userID).orderByChild("correo").equalTo(correoString);
 
-                                    profileQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            for(DataSnapshot perfilSnapshot: snapshot.getChildren()){
-                                                perfilSnapshot.getRef().removeValue();
-                                                Toast.makeText(getContext(),"Usuario borrado con éxito", Toast.LENGTH_SHORT).show();
-                                                Intent i = new Intent(getContext(), MainActivity.class);
-                                                startActivity(i);
-                                            }
-                                        }
+                                                            profileQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                @Override
+                                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                                    for(DataSnapshot perfilSnapshot: snapshot.getChildren()){
+                                                                        perfilSnapshot.getRef().removeValue();
+                                                                        Toast.makeText(getContext(),"Usuario borrado con éxito", Toast.LENGTH_SHORT).show();
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-                                            Log.e(TAG, "Cancelado", error.toException());
-                                            Toast.makeText(getContext(),"Error al borrar datos de usuario", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                                                                    }
+                                                                }
 
-                                    Log.d(TAG, "Cuenta borrada");
-                                }else{
-                                    Toast.makeText(getContext(),"Error al borrar usuario", Toast.LENGTH_SHORT).show();
-                                }
+                                                                @Override
+                                                                public void onCancelled(@NonNull DatabaseError error) {
+                                                                    Log.e(TAG, "Cancelado", error.toException());
+                                                                    //Toast.makeText(getContext(),"Error al borrar datos de usuario", Toast.LENGTH_SHORT).show();
+                                                                }
+                                                            });
+                                                            Toast.makeText(getContext(), "Cuenta eliminada", Toast.LENGTH_SHORT).show();
+                                                            Intent i = new Intent(getContext(), MainActivity.class);
+                                                            startActivity(i);
+
+
+                                                            Log.d(TAG, "Cuenta borrada");
+                                                        }else{
+                                                            Toast.makeText(getContext(),"Error al borrar usuario", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }
+                                                });
+                                    }
+                                })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
                             }
                         });
+                dialog.create();
+                dialog.show();
             }
         });
 

@@ -1,6 +1,5 @@
 package com.icb.icanbuy.ui.perfil;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -105,7 +104,7 @@ public static final String TAG="TAG";
         edt_Cedula.setText(cedula);
 
 
-
+/*
         iv_fotoperfil.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -113,8 +112,13 @@ public static final String TAG="TAG";
                 intent.setType("image/*");
                 intent.setAction(intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent.createChooser(intent, "Seleccione una Imagen"), CODIGO_SOLICITUD);
+
+                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(nombre+" "+apellido)
+                        .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                        .build();
             }
-        });
+        });*/
 
 
         /*

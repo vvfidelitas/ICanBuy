@@ -333,10 +333,11 @@
                             android:id="@+id/btn_BorrarPerfil"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Borrar perfil"
+                            android:text="@string/bt_eliminar"
                             android:textColor="@android:color/white"
-                            android:background="@android:color/black"
-                            android:backgroundTint="@android:color/black"
+                            android:backgroundTint="@android:color/holo_red_dark"
+                            android:theme="@style/Button.Red"
+
                             />
 
 

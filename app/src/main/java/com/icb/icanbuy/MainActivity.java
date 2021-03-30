@@ -231,9 +231,9 @@ public class MainActivity extends AppCompatActivity {
 
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
             firebaseAuthWithGoogle(account.getIdToken());
-
+/*
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(intent);
+            startActivity(intent);*/
         } catch (ApiException e) {
             // El código de estado de ApiException indica el motivo detallado del error.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
