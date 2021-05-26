@@ -19,6 +19,7 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.icb.icanbuy.MenuActivity;
 import com.icb.icanbuy.R;
 import com.icb.icanbuy.ui.pago.TarjetaPago;
 
@@ -122,7 +123,7 @@ public class ScannerQRActivity extends AppCompatActivity {
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(token));
                             startActivity(browserIntent);
                         } else if(token.equals("ICBTABLET01")){
-                            Intent i = new Intent(getApplicationContext(), TarjetaPago.class);
+                            Intent i = new Intent(getApplicationContext(), MenuActivity.class);
                             startActivity(i);
                         }
 

@@ -2,6 +2,7 @@ package com.icb.icanbuy.ui.perfil;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -27,6 +29,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.icb.icanbuy.MainActivity;
 import com.icb.icanbuy.R;
 import com.icb.icanbuy.models.Usuario.Usuario;
@@ -47,9 +52,16 @@ private static final String USERS="users";
     private FirebaseUser user;
     private String userID;
     private Button btnEditarPerfil, btn_BorrarPerfil;
+    private static final int  PHOTO_PERFIL = 1;
 
     private String nombreString, apellidoString, correoString, fechaString,
     cedulaString, tipoIDString, telefonoString;
+
+    private FirebaseAuth mAuth;
+    private Uri imageUri;
+    private StorageTask uploadTask;
+    private StorageReference storageReference;
+
 
 
     @Override
@@ -62,6 +74,11 @@ private static final String USERS="users";
        reference=FirebaseDatabase.getInstance().getReference("Users");
        userID=user.getUid();
 
+       mAuth = FirebaseAuth.getInstance();
+       storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
+
+
+
        // Log.v("USERID", userRef.getKey());
 
         tv_name=root.findViewById(R.id.tv_name);
@@ -71,10 +88,20 @@ private static final String USERS="users";
         tv_tipoID=root.findViewById(R.id.tv_tipoID);
         tv_Cedula=root.findViewById(R.id.tv_cedula);
         iv_fotoperfil=root.findViewById(R.id.iv_fotoperfil);
-        tv_Compras=root.findViewById(R.id.tv_compras);
-        tv_Cupones=root.findViewById(R.id.tv_cupones);
+        //tv_Compras=root.findViewById(R.id.tv_compras);
+       // tv_Cupones=root.findViewById(R.id.tv_cupones);
         btnEditarPerfil=root.findViewById(R.id.btn_EditaPerfil);
         btn_BorrarPerfil=root.findViewById(R.id.btn_BorrarPerfil);
+
+        iv_fotoperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+                i.setType("image/jpeg");
+                i.putExtra(Intent.EXTRA_LOCAL_ONLY,true);
+                startActivityForResult(Intent.createChooser(i, "Selecciona una foto"),PHOTO_PERFIL);
+            }
+        });
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -128,6 +155,8 @@ private static final String USERS="users";
                 Toast.makeText(getContext(), "¡Error!", Toast.LENGTH_LONG).show();
             }
         });
+
+
 
 
         btnEditarPerfil.setOnClickListener(new View.OnClickListener() {
@@ -212,8 +241,11 @@ private static final String USERS="users";
         });
 
 
+
         return root;
     }
+
+
 
 
 }

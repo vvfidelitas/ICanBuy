@@ -52,7 +52,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15sp"
                     android:fontFamily="sans-serif-light"
-                    android:text="Nombre Apellido"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="32sp" />
 
@@ -64,7 +64,7 @@
                     android:layout_below="@+id/tv_name"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="sans-serif"
-                    android:text="fecha"
+                    android:text=""
                     android:textAllCaps="true"
                     android:textColor="@color/address"
                     android:textSize="14sp" />
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rellay1"
                 android:orientation="horizontal">
-
+<!--
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
 
                     </LinearLayout>
 
-                </RelativeLayout>
+                </RelativeLayout>-->
 
             </LinearLayout>
 

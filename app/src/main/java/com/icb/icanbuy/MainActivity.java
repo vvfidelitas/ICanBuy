@@ -2,14 +2,19 @@ package com.icb.icanbuy;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.CallbackManager;
@@ -41,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
     //FACEBOOK
     private CallbackManager callbackManager;
     private LoginButton loginButton;
+    ImageView iv_fotoperfil;
 
     //private PropertiesConfig propertiesConfig;
     //final String urlLogin = "https://api.airtable.com/v0/appPvM705sztvANQP";
 
     private EditText edt_Correo, edt_Contrasena;
+    TextView olvidastecontrasena;
     //Instanciamos el autenticador de Firebase
     private FirebaseAuth Autenticador;
 
@@ -57,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         //Enlazamos los componentes de la interfaz
         edt_Contrasena = findViewById(R.id.edt_Pass);
         edt_Correo = findViewById(R.id.edt_Correo);
+        olvidastecontrasena = findViewById(R.id.olvidastecontra);
+        iv_fotoperfil=findViewById(R.id.iv_fotoperfil);
 
         //Obtenemos una instancia de el Autenticador
         Autenticador = FirebaseAuth.getInstance();
@@ -80,12 +89,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        olvidastecontrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         /*Configure el inicio de sesión para solicitar el ID del usuario,
         la dirección de correo electrónico.
         El ID y el perfil básico están incluidos en DEFAULT_SIGN_IN.*/
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+               // .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -206,11 +224,44 @@ public class MainActivity extends AppCompatActivity {
         return retorno;
     }
 
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Resultado devuelto al iniciar Intent desde GoogleSignInClient.getSignInIntent;
+        if (requestCode == RC_SIGN_IN) {
+            // La tarea devuelta de esta llamada siempre se completa, no es necesario adjuntar
+            //       un oyente
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+    }
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            // Accedió correctamente, muestra la interfaz de usuario autenticada.
+            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+            startActivity(intent);
+        } catch (ApiException e) {
+            // El código de estado de ApiException indica el motivo detallado del error.
+            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
+        }
+    }
+
+
+/*
+    private void signIn() {
+
+
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -231,9 +282,9 @@ public class MainActivity extends AppCompatActivity {
 
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
             firebaseAuthWithGoogle(account.getIdToken());
-/*
+
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(intent);*/
+            startActivity(intent);
         } catch (ApiException e) {
             // El código de estado de ApiException indica el motivo detallado del error.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
@@ -258,12 +309,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
-
-
-
-
-
+*/
 
 
 }

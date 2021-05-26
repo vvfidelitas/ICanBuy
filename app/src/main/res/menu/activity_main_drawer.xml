@@ -12,10 +12,11 @@
             android:id="@+id/nav_favoritos"
             android:icon="@drawable/favoritos1"
             android:title="@string/menu_favoritos" />
+        <!--
         <item
             android:id="@+id/nav_cupones"
             android:icon="@drawable/cupones1"
-            android:title="@string/menu_cupones" />
+            android:title="@string/menu_cupones" />-->
         <item
             android:id="@+id/nav_pago"
             android:icon="@drawable/pago"

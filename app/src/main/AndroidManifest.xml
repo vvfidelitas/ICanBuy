@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.icb.icanbuy"
+    android:installLocation="preferExternal"
     tools:ignore="MissingLeanbackLauncher">
 
     <uses-feature
@@ -11,25 +12,34 @@
         android:name="android.hardware.touchscreen"
         android:required="false" />
 
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.hardware.Camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
+        android:name=".ICanBuy"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ICanBuy">
-
-
-        <activity
-            android:name=".ui.terminos.TermActivity"/>
-        <activity
-            android:name=".ui.ScannerQR2.ScannerQRActivity"/>
-
+        <activity android:name=".ui.pago.PayPalActivity"></activity>
+        <activity android:name=".ui.perfil.EditarContrasena" />
+        <activity android:name=".Cupones_automercado" />
+        <activity android:name=".Cupones_maxipali" />
+        <activity android:name=".ui.cupones.Cupones_masxmenos" />
+        <activity android:name=".ui.cupones.Cupones_walmart" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".ui.terminos.TermActivity" />
+        <activity android:name=".ui.ScannerQR2.ScannerQRActivity" />
         <activity android:name=".ui.scanner.Scanner" />
         <activity android:name=".ui.pago.TarjetaPago" />
 

@@ -24,11 +24,10 @@ public class PagoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pago, container, false);
 
-        Button button_agregar_tarjeta = (Button) view.findViewById(R.id.button_agregar_tarjeta);
+        Button button_agregar_tarjeta = (Button) view.findViewById(R.id.button_pagar_orden);
         button_agregar_tarjeta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent in = new Intent(getActivity(), TarjetaPago.class);
-                in.putExtra("some", "some data");
+                Intent in = new Intent(getActivity(), PayPalActivity.class);
                 startActivity(in);
             }
         });

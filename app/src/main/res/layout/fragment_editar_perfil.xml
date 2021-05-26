@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:orientation="vertical">
-<!--
+
                         <Button
                             android:id="@+id/btn_CambiarContrasena"
                             android:layout_width="match_parent"
@@ -310,7 +310,7 @@
                             android:background="@android:color/black"
                             android:backgroundTint="@android:color/holo_green_dark"
                             android:text="Cambiar mi contraseña"
-                            android:textColor="@android:color/white" />-->
+                            android:textColor="@android:color/white" />
 
 
                         <View

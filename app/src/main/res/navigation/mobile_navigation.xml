@@ -16,13 +16,13 @@
         android:name="com.icb.icanbuy.ui.favoritos.FavoritosFragment"
         android:label="@string/menu_favoritos"
         tools:layout="@layout/fragment_favoritos" />
-
+<!--
     <fragment
         android:id="@+id/nav_cupones"
         android:name="com.icb.icanbuy.ui.cupones.CuponesFragment"
         android:label="@string/menu_cupones"
         tools:layout="@layout/fragment_cupones" />
-
+-->
     <fragment
         android:id="@+id/nav_pago"
         android:name="com.icb.icanbuy.ui.pago.PagoFragment"

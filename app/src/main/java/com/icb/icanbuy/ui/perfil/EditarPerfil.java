@@ -1,7 +1,11 @@
 package com.icb.icanbuy.ui.perfil;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -21,15 +26,23 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.icb.icanbuy.ForgotPassword;
+import com.icb.icanbuy.MainActivity;
 import com.icb.icanbuy.R;
+import com.icb.icanbuy.Registro;
 import com.icb.icanbuy.models.Usuario.Usuario;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class EditarPerfil extends Fragment {
 ImageView iv_fotoperfil;
+
 EditText edt_Nombre, edt_Apellido, edt_Fecha, edt_Correo,
     edt_Telefono, edt_Cedula, edt_TipoID, resetPassword;
 public static final String TAG="TAG";
@@ -45,6 +58,17 @@ public static final String TAG="TAG";
     private StorageReference Almacenamiento;
     private String userID;
     private  Usuario usuario;
+
+
+    private Uri imagen_uri;
+    private static final int CODIGO_SELECCION = 300;
+
+    String CARPETA_RAIZ = "MisFotosApp";
+    String CARPETAS_IMAGENES = "imagenes";
+    String RUTA_IMAGEN = CARPETA_RAIZ + CARPETAS_IMAGENES;
+    String path;
+
+
     //patrón para validar contraseña
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
@@ -55,6 +79,8 @@ public static final String TAG="TAG";
                     "(?=\\S+$)." +          //sin espacios en blanco
                     "{6,}" +                //al menos 6 caracteres
                     "$");
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,14 +97,17 @@ public static final String TAG="TAG";
         edt_TipoID=root.findViewById(R.id.edt_tipoID);
         edt_Cedula=root.findViewById(R.id.edt_cedula);
 
+
+
         btn_GuardarCambios=root.findViewById(R.id.btn_GuardarCambios);
         btn_Cancelar=root.findViewById(R.id.btn_Cancelar);
-       // btn_CambiarContrasena=root.findViewById(R.id.btn_CambiarContrasena);
+        btn_CambiarContrasena=root.findViewById(R.id.btn_CambiarContrasena);
 
 
         Autenticador=FirebaseAuth.getInstance();
         userID=Autenticador.getCurrentUser().getUid();
         user=Autenticador.getCurrentUser();
+
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -93,6 +122,7 @@ public static final String TAG="TAG";
             cedula = bundle.getString("cedula",null);
         }
 
+
         Log.d(TAG, "onCreateView: "+nombre+" "+apellido+" "+correo+" "+fechaNac);
 
         edt_Nombre.setText(nombre);
@@ -104,68 +134,24 @@ public static final String TAG="TAG";
         edt_Cedula.setText(cedula);
 
 
-/*
-        iv_fotoperfil.setOnClickListener(new View.OnClickListener(){
+
+        /*iv_fotoperfil.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent.createChooser(intent, "Seleccione una Imagen"), CODIGO_SOLICITUD);
-
-                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                        .setDisplayName(nombre+" "+apellido)
-                        .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
-                        .build();
             }
         });*/
 
+        iv_fotoperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                seleccionarImagen();
+            }
+        });
 
-        /*
-        btn_CambiarContrasena.setOnClickListener((v -> {
-           resetPassword= new EditText(v.getContext());
-
-            final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-            passwordResetDialog.setTitle("Cambiar contraseña");
-            passwordResetDialog.setMessage("Ingrese una nueva contraseña. Debe tener por lo menos una mayúscula," +
-                    " una minúscula, un número y un caracter especial.");
-                passwordResetDialog.setView(resetPassword);
-
-                try{
-                    passwordResetDialog.setPositiveButton("Cambiar", ((dialog, which) -> {
-                        //extraer correo y mandarle el link
-                        newPassword= resetPassword.getText().toString();
-                        if(ValidarContrasena()){
-                            user.updatePassword(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(getContext(), "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-
-                                    Toast.makeText(getContext(), "Error al cambiar contraseña", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                        }//if
-
-                    }));//password reset dialog positive button
-
-                    passwordResetDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                          dialog.dismiss();
-                        }
-                    });
-
-                }catch (Exception ex){
-                    ex.printStackTrace();
-                    Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-
-        }));//btn cambiar contraseña*/
 
         //boton guardar cambios
         btn_GuardarCambios.setOnClickListener(new View.OnClickListener() {
@@ -273,9 +259,19 @@ public static final String TAG="TAG";
             }
         });
 
+        btn_CambiarContrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), EditarContrasena.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
 
         return root;
     }
+
+
 
     //Metodo para validar la contraseña
     private boolean ValidarContrasena(){
@@ -292,6 +288,19 @@ public static final String TAG="TAG";
             return true;
         }
     }
+    public void seleccionarImagen() {
+        Intent galeria = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(galeria, CODIGO_SELECCION);
+    }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RESULT_OK && requestCode == CODIGO_SELECCION){
+            imagen_uri = data.getData();
+            iv_fotoperfil.setImageURI(imagen_uri);
+        }
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
+        iv_fotoperfil.setImageBitmap(bitmap);
+    }
 }
