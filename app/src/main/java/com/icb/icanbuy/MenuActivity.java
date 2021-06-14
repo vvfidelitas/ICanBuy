@@ -52,7 +52,7 @@ public class MenuActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        updateNavHeader();
+        //updateNavHeader();
 
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
@@ -78,7 +78,7 @@ public class MenuActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
+/*
     public void updateNavHeader(){
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -94,5 +94,5 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 }

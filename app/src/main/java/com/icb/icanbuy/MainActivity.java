@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private LoginButton loginButton;
     ImageView iv_fotoperfil;
+    public static final String TAG="TAG";
 
     //private PropertiesConfig propertiesConfig;
     //final String urlLogin = "https://api.airtable.com/v0/appPvM705sztvANQP";
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         El ID y el perfil básico están incluidos en DEFAULT_SIGN_IN.*/
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-               // .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -148,7 +151,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+/*
+        Button crashButton = new Button(this);
+        crashButton.setText("Crash!");
+        crashButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                throw new RuntimeException("Test Crash"); // Force a crash
+            }
+        });
 
+        addContentView(crashButton, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+*/
     }
 
     //metodo para mantener la sesion activa
@@ -237,20 +252,53 @@ public class MainActivity extends AppCompatActivity {
             // La tarea devuelta de esta llamada siempre se completa, no es necesario adjuntar
             //       un oyente
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+            }
+            //handleSignInResult(task);
         }
     }
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
+            Log.d("1", "firebaseAuthWithGoogle:" + account.getId());
             // Accedió correctamente, muestra la interfaz de usuario autenticada.
-            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(intent);
+            firebaseAuthWithGoogle(account.getIdToken());
+
+            // Accedió correctamente, muestra la interfaz de usuario autenticada.
+           // Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+           // startActivity(intent);
         } catch (ApiException e) {
             // El código de estado de ApiException indica el motivo detallado del error.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        Autenticador.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("1", "signInWithCredential:success");
+                            FirebaseUser user = Autenticador.getCurrentUser();
+                            Acutalizar_Interfaz(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("1", "signInWithCredential:failure", task.getException());
+                            Acutalizar_Interfaz(null);
+                        }
+                    }
+                });
     }
 
 
