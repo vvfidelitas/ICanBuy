@@ -19,4 +19,12 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true" />
     </LinearLayout>
+    <Button
+        android:id="@+id/btnIdentificarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Identificarse"
+        android:backgroundTint="@color/icb_green"
+        android:textColor="@color/icb_white"
+        />
 </LinearLayout>

@@ -14,7 +14,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_favoritos">Favoritos</string>
     <string name="menu_cupones">Mis cupones</string>
-    <string name="menu_pago">Métodos de pago</string>
+    <string name="menu_pago">Método de pago</string>
     <string name="menu_perfil">Perfil</string>
     <string name="menu_sesion">Cerrar sesión</string>
 
