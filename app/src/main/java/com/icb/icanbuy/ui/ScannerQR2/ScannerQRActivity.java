@@ -97,16 +97,47 @@ public class ScannerQRActivity extends AppCompatActivity implements AsyncTaskCal
         btnIdentificarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               new PostAPI().execute();
-                Toast.makeText(getApplicationContext(),"Conexión exitosa", Toast.LENGTH_SHORT).show();
-                (new Handler()).postDelayed(this::irMenu, 2000);
-            }
+                user= FirebaseAuth.getInstance().getCurrentUser();
+                reference= FirebaseDatabase.getInstance().getReference("Users");
+                userID=user.getUid();
 
-            private void irMenu() {
-                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-                startActivity(intent);
-            }
-        });
+
+                reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        try {
+                            for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                                Usuario userProfile = snapshot.getValue(Usuario.class);
+
+                                if (userProfile != null) {
+                                    nombreString= (userProfile.getNombre()).concat(" ".concat(userProfile.getApellido()));
+
+
+                                }
+                            }
+                        }catch (Exception ex){
+                            ex.printStackTrace();
+                        }
+
+                        new PostAPI().execute();
+                        Toast.makeText(getApplicationContext(),"Conexión exitosa", Toast.LENGTH_SHORT).show();
+                        (new Handler()).postDelayed(this::irMenu, 2000);
+                    }//on data change
+
+                    private void irMenu() {
+                        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });//listener for single value event
+
+            }//onclick
+
+        });//onclick listener
 
 
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
@@ -287,13 +318,13 @@ public class ScannerQRActivity extends AppCompatActivity implements AsyncTaskCal
 
         JSONObject params = new JSONObject();
         params.put( "IDUsuario", ScannerQRActivity.obtenerID());
-        params.put( "NombreUsuario", ScannerQRActivity.obtenerNombre());
+        params.put( "NombreUsuario", nombreString);
         params.put( "Estado", 1);
         params.put( "IDTablet", "1");
         params.put( "totalAPagar", "0.00");
         return params;
     }
-
+/*
     public static String obtenerNombre(){
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users");
@@ -325,7 +356,7 @@ public class ScannerQRActivity extends AppCompatActivity implements AsyncTaskCal
             }
         });
         return nombreString;
-    }
+    }*/
     public static String obtenerID(){
         user= FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users");
